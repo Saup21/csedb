@@ -1,7 +1,12 @@
+body {
+    overflow-x: auto;
+}
+
 h3.text-center {
     font-family: monospace;
-    font-weight: 300;
+    font-weight: 600;
     margin: 10px 0 0 0;
+    color: #6c757d;
 }
 
 a.top-text {
@@ -14,4 +19,32 @@ a.top-text {
 th.big {
     font-size: 30px;
     font-family: monospace;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+@media screen and (max-width: 475px) {
+    a.top-text {
+        font-size: 22px;
+    }
+
+    nav.mobp {
+        padding-left: 0;
+    }
+
+    h3.text-center {
+        font-size: 20px;
+    }
+
+    th.big {
+        font-size: 18px;
+    }
+
+    td {
+        font-size: 14px;
+    }
+
+    th.rsmol {
+        font-size: 14px;
+    }
 }

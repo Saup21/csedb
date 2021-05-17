@@ -1,21 +1,22 @@
 {% extends 'index.html' %}
 
 {% block content %}
-    <table class="table table-striped">
+    <table class="table table-striped table-responsive-sm table-responsive-md">
         <thead>
         <tr>
             {% for i in row %}
-                <th class="big" scope="col">{{ i }}</th>
+                <th class="big text-center" scope="col">{{ i }}</th>
             {% endfor %}
         </tr>
         </thead>
   <tbody>
         {% for data in db %}
             <tr>
-                <th scope="row">{{data['Roll no']}}</th>
-                <td>{{data['Student Name']}}</td>
-                <td>{{data['Student Mobile']}}</td>
-                <td>{{data['Student Email']}}</td>
+                <th class="rsmol text-center" scope="row">{{data['Roll']}}</th>
+                <td class="text-center">{{data['Name']}}</td>
+                <td class="text-center">{{data['Mobile']}}</td>
+                <td class="text-center" width=250px;>{{data['Email']}}</td>
+                <td class="text-center">{{data['College-mail']}}</td>
             </tr>
         {% endfor %}
   </tbody>
