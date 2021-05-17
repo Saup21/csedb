@@ -2,6 +2,7 @@ import gspread
 from google.oauth2.service_account import Credentials
 from oauth2client.service_account import ServiceAccountCredentials
 from flask import Flask, render_template, url_for, redirect
+import time
 
 app = Flask(__name__)
 app.secret_key = 'csedepartmentdb'
@@ -16,11 +17,27 @@ creds = ServiceAccountCredentials.from_json_keyfile_name('creds.json', scope)
 
 gc = gspread.authorize(creds)
 
-sheet = 'https://docs.google.com/spreadsheets/d/1_AKFcMxpkRS28innM0NxENfkihmlRn-nJWxNggCa_II/edit#gid=0'
+sheet_url = 'https://docs.google.com/spreadsheets/d/1_AKFcMxpkRS28innM0NxENfkihmlRn-nJWxNggCa_II/edit#gid=0'
 #csedb
-sh = gc.open_by_url(sheet)
-sheet = sh.get_worksheet(0)
-print(sheet.cell(1, 1))
+sh = gc.open_by_url(sheet_url)
+
+# sheet = sh.get_worksheet(0)
+# print(sheet.row_values(1))
+
+def cse_row():
+    sheet = sh.get_worksheet(0)
+    row1 = sheet.row_values(1)
+    return row1
+
+def cse_data():
+    sheet = sh.get_worksheet(0)
+    data = sheet.get_all_records()
+    return data
+
+
+@app.route('/')
+def cse_data():
+    return render_template('data.html', row=cse_row())
 
 
 
