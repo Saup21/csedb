@@ -25,19 +25,19 @@ sh = gc.open_by_url(sheet_url)
 # print(sheet.row_values(1))
 
 def cse_row():
-    sheet = sh.get_worksheet(0)
+    sheet = sh.sheet1
     row1 = sheet.row_values(1)
     return row1
 
-def cse_data():
-    sheet = sh.get_worksheet(0)
-    data = sheet.get_all_records()
-    return data
+# def cse_data():
+#     sheet = sh.sheet1
+#     data = sheet.get_all_records()
+#     return data
 
 
 @app.route('/')
 def cse_data():
-    return render_template('data.html', row=cse_row())
+    return render_template('data.html', row=cse_row(), db=sh.sheet1.get_all_records())
 
 
 
