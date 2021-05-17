@@ -21,14 +21,13 @@ sheet_url = 'https://docs.google.com/spreadsheets/d/1_AKFcMxpkRS28innM0NxENfkihm
 #csedb
 sh = gc.open_by_url(sheet_url)
 
-# sheet = sh.get_worksheet(0)
-# print(sheet.row_values(1))
-
+#sheets header items
 def cse_row():
     sheet = sh.sheet1
     row1 = sheet.row_values(1)
     return row1
 
+#sheets data script not working so called directly from render_template function, need to fix it 
 # def cse_data():
 #     sheet = sh.sheet1
 #     data = sheet.get_all_records()

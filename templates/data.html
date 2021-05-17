@@ -1,6 +1,23 @@
 {% extends 'index.html' %}
 
 {% block content %}
-    {{row}}<br>
-    {{db}}
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            {% for i in row %}
+                <th class="big" scope="col">{{ i }}</th>
+            {% endfor %}
+        </tr>
+        </thead>
+  <tbody>
+        {% for data in db %}
+            <tr>
+                <th scope="row">{{data['Roll no']}}</th>
+                <td>{{data['Student Name']}}</td>
+                <td>{{data['Student Mobile']}}</td>
+                <td>{{data['Student Email']}}</td>
+            </tr>
+        {% endfor %}
+  </tbody>
+</table>
 {% endblock %}

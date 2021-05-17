@@ -2,13 +2,21 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, iniial-scale=1.0">
         <title>CSEdb</title>
         <link rel="stylesheet" href="static/css/bootstrap.min.css">
+        <link rel="stylesheet" href="static/css/styles.css">
     </head>
     <body>
-        f
+        <nav class="navbar navbar-light bg-secondary">
+            <div class="container-fluid">
+                <a class="navbar-brand top-text" href="/">CSE-Database-2023</a>
+            </div>
+        </nav>
+        <h3 class="text-center">Student-Info</h3>
         {% block content %}
         {% endblock %}
-        <script type="text/javascript" src="bootstrap.min.js"></script>
+        <script type="text/javascript" src="static/js/jquery.min.js"></script>
+        <script type="text/javascript" src="static/js/bootstrap.min.js"></script>
     </body>
 </html>
